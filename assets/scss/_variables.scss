@@ -1,0 +1,115 @@
+//<PALET>
+    $color-primary: #ff5bd3;
+    $color-secondary: #00cda6;
+//</PALET>
+
+//<FONTS>
+    @import 'fonts';
+    $font-one: 'GothamBold', sans-serif;
+    $font-two: 'GothamMedium', sans-serif;
+    $font-three: 'GothamRegular', sans-serif;
+    $font-four: 'GothamBook', sans-serif;
+//</FONTS>
+
+//<COMPONENTS>
+    .container {
+        width: 90%;
+        max-width: 980px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+    }
+
+    .title {
+        font-family: $font-one;
+        text-align: center;
+        font-size: 1.75rem;
+        text-shadow: 0px 0px 10px #fff;
+    }
+
+    .subtitle {
+        font-family: $font-two;
+        font-size: 1.25rem;
+        text-align: center;
+        text-shadow: 0px 0px 10px #fff;
+    }
+
+    .text {
+        font-family: $font-three;
+        font-size: 1.05rem;
+        text-align: center;
+        text-shadow: 0px 0px 10px #fff;
+    }
+
+    .text-light {
+        font-family: $font-four;
+        font-size: 1rem;
+        text-align: center;
+        text-shadow: 0px 0px 10px #fff;
+    }
+
+    .container__box {
+        display: flex;
+        justify-content: space-between;
+        
+        @media screen and (max-width: 520px){
+            flex-direction: column;
+        }
+
+        &.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .container-left {
+            width: 49%;
+
+            @media screen and (max-width: 520px){
+                width: 100%;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .container-right {
+            width: 49%;
+
+            @media screen and (max-width: 520px){
+                width: 100%;
+            }
+        }
+    }
+
+    .button {
+        display: block;
+        width: fit-content;
+        margin: auto;
+        padding: 0.5rem 1.5rem;
+        text-decoration: none;
+        color: #000;
+        background: $color-secondary;
+        transition: 0.5s;
+        font-family: $font-one;
+        font-size: 1.25rem;
+        border-radius: 0.5rem;
+        animation: button 3s ease infinite;
+
+        &:hover {
+            color: $color-secondary;
+            background: #000;
+        }
+    }
+
+    @keyframes button {
+        0%, 100% {
+            transform: matrix(1,0,0,1,0,0);
+        }
+
+        50% {
+            transform: matrix(1.05,0,0,1.05,0,0);
+        }
+    }
+//</COMPONENTS>
